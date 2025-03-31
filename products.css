@@ -1,0 +1,105 @@
+/* Product Card Styles */
+.card-img-wrapper {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+    background-color: var(--white);
+    border-radius: 8px 8px 0 0;
+}
+
+.card-img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-overlay {
+    opacity: 1;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-body {
+    padding: 1.25rem;
+}
+
+.card-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+/* Products Section Styles */
+.products-section {
+    min-height: calc(100vh - 56px - 120px);
+    padding: 2rem 0;
+}
+
+/* Filter Section Styles */
+.filter-section {
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.filter-buttons .btn {
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--white);
+    border-color: var(--dark-grey);
+    color: var(--dark-grey);
+}
+
+.filter-buttons .btn:hover,
+.filter-buttons .btn.active {
+    background-color: var(--dark-grey);
+    border-color: var(--dark-grey);
+    color: var(--white);
+}
+
+/* Responsive Styles */
+@media (max-width: 767.98px) {
+    .card-img-wrapper {
+        padding-top: 120%;
+    }
+} 

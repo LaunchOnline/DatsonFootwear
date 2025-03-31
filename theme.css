@@ -1,0 +1,181 @@
+:root {
+    --dark-grey: #2c3e50;
+    --yellow: #f1c40f;
+    --white: #ffffff;
+    --black: #000000;
+    --light-grey: #ecf0f1;
+}
+
+/* Global Styles */
+body {
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navigation Styles */
+.navbar {
+    background-color: var(--dark-grey) !important;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    color: var(--yellow) !important;
+    font-weight: 700;
+}
+
+.navbar-brand img {
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.navbar-brand:hover img {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    color: var(--white) !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem !important;
+    margin: 0 0.2rem;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--yellow) !important;
+}
+
+.nav-link.active {
+    color: var(--yellow) !important;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.navbar-toggler {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+footer h5 {
+    color: var(--yellow);
+    font-weight: 700;
+}
+
+footer a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--yellow);
+}
+
+/* Button Styles */
+.btn-primary {
+    background-color: var(--dark-grey);
+    border-color: var(--dark-grey);
+}
+
+.btn-primary:hover {
+    background-color: var(--black);
+    border-color: var(--black);
+}
+
+.btn-light {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--black);
+}
+
+.btn-light:hover {
+    background-color: #f39c12;
+    border-color: #f39c12;
+}
+
+/* Form Styles */
+.input-group-text {
+    background-color: var(--dark-grey);
+    border-color: var(--dark-grey);
+    color: var(--white);
+}
+
+.form-control {
+    border-color: var(--dark-grey);
+}
+
+.form-control:focus {
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 0.2rem rgba(241, 196, 15, 0.25);
+}
+
+/* Section Styles */
+.section-title {
+    color: var(--dark-grey);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.lead {
+    color: var(--dark-grey);
+}
+
+/* Modal Styles */
+.modal-content {
+    border: none;
+    border-radius: 8px;
+}
+
+.modal-header {
+    background-color: var(--dark-grey);
+    color: var(--white);
+    border-radius: 8px 8px 0 0;
+}
+
+.modal-header .btn-close {
+    color: var(--white);
+}
+
+.modal-footer {
+    border-top: 1px solid var(--light-grey);
+}
+
+/* Table Styles */
+.table th {
+    color: var(--dark-grey);
+    font-weight: 600;
+}
+
+.table td {
+    color: var(--dark-grey);
+}
+
+/* Badge Styles */
+.badge {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+/* Link Styles */
+a {
+    color: var(--dark-grey);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--yellow);
+} 

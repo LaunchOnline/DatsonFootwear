@@ -231,10 +231,11 @@ body {
     padding: 0.5rem 1.5rem;
     border-radius: 25px;
     transition: var(--transition);
+    color: var(--white);
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: var(--yellow);
     color: var(--primary-color);
     transform: translateY(-2px);
 }
@@ -259,107 +260,442 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background-color: var(--light-grey);
-    padding: 4rem 0;
+    background-color: #d1d1d1;
+    padding: 2rem 0;
+    color: var(--dark-grey);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+    opacity: 0.02;
+    pointer-events: none;
 }
 
 .hero-section h1 {
     color: var(--dark-grey);
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    position: relative;
 }
 
 .hero-section .lead {
     color: var(--dark-grey);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
+    position: relative;
+    opacity: 0.9;
 }
 
-/* Industry Cards */
+.hero-section .btn {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: var(--transition);
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.hero-section .btn:hover,
+.hero-section .btn:active {
+    background-color: var(--yellow);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Hero Section Button Styles */
+.hero-section a.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 30px;
+    transition: var(--transition);
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section a.btn-primary:hover,
+.hero-section a.btn-primary:active,
+.hero-section a.btn-primary:focus {
+    background-color: var(--yellow);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: none;
+    outline: none;
+}
+
+/* Remove any conflicting styles */
+.hero-section .btn,
+.hero-section .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section .btn:hover,
+.hero-section .btn:active,
+.hero-section .btn:focus,
+.hero-section .btn-primary:hover,
+.hero-section .btn-primary:active,
+.hero-section .btn-primary:focus {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--primary-color);
+    outline: none;
+}
+
+/* Ensure the button container is clickable */
+.hero-section .col-md-6 {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-section img {
+    width: 105%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 1.5rem 0;
+    }
+
+    .hero-section img {
+        width: 100%;
+    }
+}
+
+/* Industries Section */
+.industries-section {
+    background-color: var(--white);
+    padding: 5rem 0;
+    position: relative;
+    margin-top: 2rem;
+}
+
+.industries-section h2 {
+    position: relative;
+    z-index: 1;
+    margin-top: 2rem;
+}
+
 .industry-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .industry-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .industry-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.industry-card:hover img {
+    transform: scale(1.05);
 }
 
 .industry-card h3 {
-    padding: 1rem;
+    padding: 1.5rem;
     margin: 0;
     color: var(--dark-grey);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    background: var(--white);
+    position: relative;
 }
 
-.industry-card .btn {
-    margin: 1rem;
+.industry-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1.5rem;
+    width: 50px;
+    height: 3px;
+    background: var(--yellow);
+    transition: width 0.3s ease;
+}
+
+.industry-card:hover h3::after {
+    width: 100px;
 }
 
 /* Strengths Section Styles */
+.strengths-section {
+    background-color: #b3b3b3;
+    padding: 5rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.strengths-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover;
+    opacity: 0.02;
+}
+
 .strength-card {
     background: var(--white);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
     height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.strength-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
 }
 
 .strength-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
 }
 
-.strength-image {
+.strength-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* Strength Icons with different images */
+.strength-icon {
+    width: 88px;
+    height: 88px;
+    margin: 0 auto 1.5rem;
+    background: var(--yellow);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Breathable Leather Upper */
+.strength-card:nth-child(1) .strength-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 15px;
+    height: 100%;
+    background: url('assets/breathable-upper.png') center/cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+/* Oil and Fuel Resistant Sole */
+.strength-card:nth-child(2) .strength-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/oil-resistant.png') center/cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+/* Puncture Resistant Steel */
+.strength-card:nth-child(3) .strength-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/puncture-resistant.png') center/cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+/* Anti-Static Shoe */
+.strength-card:nth-child(4) .strength-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/anti-static.png') center/cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+/* Water Repellent Uppers */
+.strength-card:nth-child(5) .strength-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('assets/Water-Repellent.png') center/cover;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    transform: scale(0.8);
+}
+
+.strength-card:hover .strength-icon::before {
+    opacity: 1;
+}
+
+.strength-card:hover .strength-icon {
+    transform: none;
+}
+
+.strength-icon i {
+    display: none;  /* Hide the Font Awesome icons */
+}
+
+/* Add specific classes for each strength card */
+.strength-card.breathable .strength-icon::before {
+    background: url('assets/breathable-upper.png') center/cover;
+}
+
+.strength-card.oil-resistant .strength-icon::before {
+    background: url('assets/oil-resistant.png') center/cover;
+}
+
+.strength-card.puncture-resistant .strength-icon::before {
+    background: url('assets/puncture-resistant.png') center/cover;
+}
+
+.strength-card.anti-static .strength-icon::before {
+    background: url('assets/anti-static.png') center/cover;
+}
+
+.strength-card.water-repellent .strength-icon::before {
+    background: url('assets/Water-Repellent.png') center/cover;
 }
 
 .strength-card h3 {
     color: var(--dark-grey);
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.strength-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: var(--yellow);
+    transition: width 0.3s ease;
+}
+
+.strength-card:hover h3::after {
+    width: 100px;
 }
 
 .strength-card p {
-    color: var(--light-grey);
-    font-size: 0.9rem;
-    margin-bottom: 0;
+    color: var(--dark-grey);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.strength-card:hover p {
+    opacity: 1;
+    transform: translateY(-2px);
 }
 
 /* Product Cards */
 .product-card {
     background: var(--white);
-    border-radius: 8px;
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: var(--yellow);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover::before {
+    transform: scaleX(1);
 }
 
 .product-card .img-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 100%; /* 1:1 Aspect Ratio */
+    padding-top: 100%;
     overflow: hidden;
     background-color: var(--light-grey);
 }
@@ -371,33 +707,77 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
-    padding: 1rem;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
 }
 
 .product-card .content-wrapper {
-    padding: 1rem;
+    padding: 2rem;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
+    background: var(--white);
+    position: relative;
 }
 
 .product-card h3 {
     margin: 0;
     color: var(--dark-grey);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.product-card h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--yellow);
+    transition: width 0.3s ease;
+}
+
+.product-card:hover h3::after {
+    width: 100px;
 }
 
 .product-card p {
     color: var(--dark-grey);
-    font-size: 0.9rem;
-    margin-bottom: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
     flex-grow: 1;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover p {
+    opacity: 1;
+    transform: translateY(-2px);
 }
 
 .product-card .btn {
     margin: 0;
     align-self: flex-start;
+    padding: 0.75rem 2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.product-card .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 /* Section Headers */
@@ -427,23 +807,259 @@ body {
     }
 
     .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.1rem;
+    }
+
+    .hero-section .btn {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .industries-section {
+        padding: 3rem 0;
+        margin-top: 1rem;
+    }
+
+    .industries-section h2 {
+        margin-top: 1rem;
+    }
+
+    .industry-card img {
+        height: 200px;
+    }
+
+    .product-card {
+        margin-bottom: 2rem;
+    }
+
+    .product-card .content-wrapper {
+        padding: 1.5rem;
+    }
+
+    .product-card img {
+        padding: 1rem;
+    }
+
+    .product-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-card p {
+        font-size: 0.9rem;
+    }
+
+    .strengths-section {
+        padding: 3rem 0;
+    }
+
+    .strength-card {
+        padding: 1.5rem;
+    }
+
+    .strength-icon {
+        width: 66px;
+        height: 66px;
+    }
+
+    .strength-icon i {
+        font-size: 1.5rem;
+    }
+
+    .strength-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .strength-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Products Section */
+.products-section {
+    background-color: var(--white);
+    padding: 5rem 0;
+    position: relative;
+}
+
+.products-section h2 {
+    color: var(--dark-grey);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 3rem;
+    text-align: center;
+    position: relative;
+}
+
+.products-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--yellow);
+}
+
+/* General hover styles for touch devices */
+@media (hover: none) {
+    .product-card:hover,
+    .industry-card:hover,
+    .strength-card:hover {
+        transform: none;
+    }
+
+    .product-card:active,
+    .industry-card:active,
+    .strength-card:active {
+        transform: translateY(-5px);
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+
+    .btn:active {
+        transform: translateY(-2px);
+    }
+
+    .btn-primary:active,
+    .hero-section .btn:active {
+        background-color: var(--yellow);
+        color: var(--primary-color);
+        transform: translateY(-2px);
+    }
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .product-card,
+    .industry-card,
+    .strength-card {
+        margin-bottom: 1.5rem;
+        transform: none !important;
+    }
+
+    .product-card:active,
+    .industry-card:active,
+    .strength-card:active {
+        transform: translateY(-5px) !important;
+    }
+
+    .product-card .content-wrapper,
+    .strength-card {
+        padding: 1.5rem;
+    }
+
+    .product-card img,
+    .industry-card img {
+        padding: 0.5rem;
+    }
+
+    .product-card h3,
+    .industry-card h3,
+    .strength-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .product-card p,
+    .strength-card p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+        transform: none !important;
+    }
+
+    .btn:active {
+        transform: translateY(-2px) !important;
+    }
+
+    .hero-section .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .hero-section {
+        padding: 2rem 0;
+    }
+
+    .hero-section h1 {
         font-size: 2rem;
     }
 
-    .industry-card img,
-    .product-card img {
-        height: 150px;
+    .hero-section .lead {
+        font-size: 1rem;
     }
 
-    .strength-image {
-        height: 150px;
+    .hero-section img {
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .industries-section,
+    .strengths-section,
+    .products-section {
+        padding: 3rem 0;
+    }
+
+    .strength-icon {
+        width: 66px;
+        height: 66px;
+    }
+
+    .strength-icon i {
+        font-size: 1.5rem;
+    }
+}
+
+/* Fix hover effects for all interactive elements */
+.product-card,
+.industry-card,
+.strength-card {
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.product-card:hover,
+.industry-card:hover,
+.strength-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Ensure hover effects work on touch devices */
+@media (hover: hover) {
+    .product-card:hover,
+    .industry-card:hover,
+    .strength-card:hover {
+        transform: translateY(-5px);
     }
     
-    .strength-card h3 {
-        font-size: 1.1rem;
+    .btn:hover {
+        transform: translateY(-2px);
+    }
+}
+
+@media (hover: none) {
+    .product-card:active,
+    .industry-card:active,
+    .strength-card:active {
+        transform: translateY(-5px);
     }
     
-    .strength-card p {
-        font-size: 0.85rem;
+    .btn:active {
+        transform: translateY(-2px);
     }
 } 
